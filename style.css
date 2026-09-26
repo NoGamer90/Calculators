@@ -368,9 +368,6 @@ h1 {
     border: 2px solid yellow;
     border-radius: 10px;
 
-    font-size: 16px;
-
     cursor: pointer;
-
     z-index: 9999;
 }
