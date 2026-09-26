@@ -103,22 +103,21 @@ for (let i = 0; i < 30; i++) {
 setInterval(shootingStar, 1000);
 
 const music = document.getElementById("bgMusic");
-const button = document.getElementById("musicButton");
+const musicButton = document.getElementById("musicButton");
 
-button.addEventListener("click", async () => {
+musicButton.addEventListener("click", function () {
 
     if (music.paused) {
 
-        try {
-            await music.play();
-            button.innerHTML = "🔊 Music ON";
-        } catch (error) {
-            console.log("Music could not be played:", error);
-        }
+        music.play();
+
+        musicButton.innerHTML = "🔊 Music ON";
 
     } else {
 
         music.pause();
-        button.innerHTML = "🔇 Music OFF";
+
+        musicButton.innerHTML = "🔇 Music OFF";
     }
+
 });
