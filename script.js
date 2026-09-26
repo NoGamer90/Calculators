@@ -105,12 +105,20 @@ setInterval(shootingStar, 1000);
 const music = document.getElementById("bgMusic");
 const button = document.getElementById("musicButton");
 
-button.onclick = function () {
+button.addEventListener("click", async () => {
+
     if (music.paused) {
-        music.play();
-        button.innerHTML = "🔊 Music ON";
+
+        try {
+            await music.play();
+            button.innerHTML = "🔊 Music ON";
+        } catch (error) {
+            console.log("Music could not be played:", error);
+        }
+
     } else {
+
         music.pause();
         button.innerHTML = "🔇 Music OFF";
     }
-};
+});
